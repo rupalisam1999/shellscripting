@@ -1,9 +1,12 @@
-#!/bin/bash -x
- read -p "enter a number" n
 
-for (( counter=1; counter<=n; counter++ ))
+#!/bin/bash -x
+read -p "enter the nth harmonic no " num
+harmonicno=1
+for ((  i=2; i<=$num; i++ ))
 do
-     result=$((2*$counter))
-     echo -n $result
+harmonicno=`echo "scale=4; ($harmonicno+(1/$i))" | bc`;
+echo  $harmonicno
 done
-    printf "\n"
+printf "\n"
+
+
